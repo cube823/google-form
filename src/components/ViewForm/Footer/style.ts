@@ -14,6 +14,11 @@ const Button = styled.button`
   color: ${({ theme }) => theme.colors.white};
   padding: 10px 24px;
   border-radius: 8px;
+
+  &:hover {
+    cursor: pointer;
+    background-color: rgb(103, 58, 183, 0.8);
+  }
 `
 
 const TextButton = styled.div`

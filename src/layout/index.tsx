@@ -15,14 +15,16 @@ const Global = styled.div`
 const QuestionList = styled.div`
   display: grid;
   justify-content: 'center';
+  max-width: 768px;
+  width: 100%;
 `
 
 const Question = styled.div<{ isCurrent?: boolean }>`
+  width: 100%;
+  max-width: 768px;
   display: grid;
   position: relative;
   background-color: ${({ theme }) => theme.colors.white};
-  max-width: 768px;
-  width: 100%;
   border-radius: 8px;
   padding: 0 24px 0 24px;
   border: 1px solid ${({ theme }) => theme.colors.gray_lighter};

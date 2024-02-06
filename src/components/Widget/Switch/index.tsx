@@ -17,7 +17,9 @@ const QuestionSwitch = ({ checked, onCheckedChange }: QuestionSwitchPros) => {
 const StyledSwitchRoot = styled(Switch.Root)`
   width: 42px;
   height: 25px;
-  background-color: ${(props) => props.theme.colors.black};
+  /* border: 7px solid rgb(185, 185, 185); */
+  /* background-color: ${(props) => props.theme.colors.black}; */
+  background-color: rgb(185, 185, 185);
   border-radius: 9999px;
   position: relative;
   padding: 0;
@@ -38,6 +40,7 @@ const StyledSwitchThumb = styled(Switch.Thumb)`
   border-radius: 9999px;
   transition: transform 100ms;
   will-change: transform;
+  box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.1), inset 0 -1px 0 rgba(0, 0, 0, 0.07);
 
   &[data-state='checked'] {
     transform: translateX(19px);

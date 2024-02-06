@@ -15,9 +15,11 @@ const GlobalStyles = createGlobalStyle`
         border: 0;
         font-size: 14px;
         vertical-align: baseline;
+
     }
     body{
         font-family: 'docs-Roboto', Helvetica, Arial, sans-serif;
+        background-color: #f0ebf8;
     }
     ol, ul{
         list-style: none;

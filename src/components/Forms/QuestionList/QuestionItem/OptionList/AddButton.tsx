@@ -41,20 +41,12 @@ const AddButton = ({ question, index }: { question: QuestionSlice; index: number
 const Etc = styled.div`
   display: flex;
   cursor: pointer;
-  padding: 0 8px;
+  padding: 8px;
   position: relative;
 
   &:hover {
-    &::before {
-      content: '';
-      position: absolute;
-      top: -4px;
-      left: 0;
-      width: 100%;
-      height: calc(100% + 8px);
-      background-color: ${({ theme }) => theme.colors.blue_lighter};
-      border-radius: 4px;
-    }
+    background-color: rgba(26, 115, 232, 0.04);
+    border-radius: 4px;
   }
 `
 

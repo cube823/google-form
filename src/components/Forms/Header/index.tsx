@@ -25,6 +25,7 @@ const FormHeader = () => {
           fontSize: 32,
         }}
         hasBorderBottom={currentIndex === -1}
+        hoverDisabled={currentIndex !== -1}
       />
       <Input
         value={description.text}
@@ -35,6 +36,7 @@ const FormHeader = () => {
           fontSize: '11pt',
         }}
         hasBorderBottom={currentIndex === -1}
+        hoverDisabled={currentIndex !== -1}
       />
     </Layout.Question>
   )

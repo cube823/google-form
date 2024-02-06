@@ -75,6 +75,7 @@ const OptionItem = ({ index, optionIndex, isCurrent, question, option }: OptionI
             }}
             setValue={(val) => setValue(optionIndex, val)}
             removeInput={question.options.length > 1 && isCurrent ? removeOption : undefined}
+            hoverDisabled={!isCurrent}
           />
         </Flex>
       )}

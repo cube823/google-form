@@ -1,22 +1,23 @@
 import { ReactNode } from 'react'
-import * as S from '../style'
-import * as Select from '@radix-ui/react-select'
 import Icon, { IconSymbol } from '../../../../../Icons'
+import { Select } from '../../../../../Widget/Select/style'
 
 const SelectItem = ({
   children,
   iconName,
+  isCurrent,
   ...props
 }: {
   value: string
+  isCurrent?: boolean
   iconName: IconSymbol
   children: ReactNode
 }) => {
   return (
-    <S.Item {...props}>
+    <Select.Item {...props} isCurrent={isCurrent}>
       <Icon iconName={iconName} color='gray' />
       <Select.ItemText>{children}</Select.ItemText>
-    </S.Item>
+    </Select.Item>
   )
 }
 

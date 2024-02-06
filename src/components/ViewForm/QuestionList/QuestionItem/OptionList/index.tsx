@@ -1,4 +1,3 @@
-import { CSSProperties, useEffect } from 'react'
 import { updateQuestionAnswer } from '../../../../../feature/questionSlice'
 import { useAppDispatch, useAppSelector } from '../../../../../store'
 import Grid from '../../../../Widget/Grid'
@@ -6,19 +5,6 @@ import Input from '../../../../Widget/Input'
 import EtcItem from './EtcItem'
 import OptionItem from './Item'
 import DropdownSelect from './Select'
-
-const inputStyle: CSSProperties = {
-  paddingBottom: 8,
-  marginTop: 16,
-  width: '50%',
-  borderBottom: '1px solid #e0e0e0',
-  whiteSpace: 'pre-wrap',
-  wordWrap: 'break-word',
-  flexGrow: 1,
-  height: 'auto',
-  resize: 'none',
-  overflow: 'hidden',
-}
 
 const QuestionOptionList = ({ index }: { index: number }) => {
   const dispatch = useAppDispatch()
@@ -37,16 +23,14 @@ const QuestionOptionList = ({ index }: { index: number }) => {
   // }, [])
 
   if (question.questionType === 'short')
-    return (
-      <Input style={inputStyle} value={question.answerText} setValue={onUpdateQuestionAnswer} />
-    )
+    return <Input hasBorderBottom value={question.answerText} setValue={onUpdateQuestionAnswer} />
 
   if (question.questionType === 'long')
     return (
       <Input
         as='textarea'
         color='gray_light'
-        style={{ ...inputStyle, width: '100%' }}
+        hasBorderBottom
         value={question.answerText}
         setValue={onUpdateQuestionAnswer}
       />

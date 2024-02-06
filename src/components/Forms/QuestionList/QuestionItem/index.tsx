@@ -12,6 +12,7 @@ import Footer from './Footer'
 import Flex from '../../../Widget/Flex'
 import Grid from '../../../Widget/Grid'
 import * as S from './style'
+import { styled } from 'styled-components'
 
 const QuestionItem = ({ id, index }: { id: string; index: number }) => {
   const dispatch = useAppDispatch()
@@ -51,27 +52,27 @@ const QuestionItem = ({ id, index }: { id: string; index: number }) => {
 
             <S.DragHandler {...provided.dragHandleProps}>
               {isHover || isCurrent ? (
-                <Icon color='#b2b2b2' iconName='drag-indicator' />
+                <Icon color='gray_lighter' iconName='drag-indicator' />
               ) : (
                 <Flex style={{ height: '24px', width: '100%' }} />
               )}
             </S.DragHandler>
 
-            <Flex style={{ gap: '16px', marginBottom: 8 }}>
+            <Header>
               <Input
                 value={currentQuestion.title.text}
                 setValue={setValue}
+                hoverDisabled={!isCurrent}
                 style={{
                   fontSize: '16px',
                   height: isCurrent ? '56px' : undefined,
-                  borderBottom: isCurrent ? '1px solid rgba(0,0,0,.38)' : undefined,
                   backgroundColor: isCurrent ? 'rgba(0,0,0,.05)' : undefined,
                   padding: isCurrent ? '0 16px 0 16px' : undefined,
                 }}
               />
 
               {isCurrent && <QuestionSelect index={index} />}
-            </Flex>
+            </Header>
 
             <Grid style={{ width: '100%', paddingBottom: 24 }}>
               <QuestionOptionList index={index} />
@@ -84,5 +85,16 @@ const QuestionItem = ({ id, index }: { id: string; index: number }) => {
     </Draggable>
   )
 }
+
+const Header = styled.div`
+  display: flex;
+  row-gap: 8px;
+  column-gap: 16px;
+  margin-bottom: 8px;
+
+  @media screen and (max-width: 640px) {
+    flex-direction: column;
+  }
+`
 
 export default memo(QuestionItem)

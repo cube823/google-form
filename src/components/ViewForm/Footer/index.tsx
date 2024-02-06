@@ -1,38 +1,31 @@
-import { styled } from 'styled-components'
+import { useState } from 'react'
+import { createPortal } from 'react-dom'
 import Text from '../../Widget/Text'
+import RemoveModal from './RemoveModal'
 import * as S from './style'
 
 const ViewFormFooter = () => {
-  const onSubmit = () => {}
+  const [removeModalOpen, setRemoveModalOpen] = useState(false)
 
-  const onReset = () => {}
+  const onSubmit = () => window.open('/formResponse', '_blank')
+
+  const onRemoveModalOpen = () => setRemoveModalOpen(true)
+  const onRemoveModalClose = () => {
+    setRemoveModalOpen(false)
+  }
 
   return (
-    <S.Main>
-      <Button>제출</Button>
+    <>
+      <S.Main>
+        <S.Button onClick={onSubmit}>제출</S.Button>
 
-      <TextButton>
-        <Text text='양식 지우기' color='purple_dark' />
-      </TextButton>
-    </S.Main>
+        <S.TextButton onClick={onRemoveModalOpen}>
+          <Text text='양식 지우기' color='purple_dark' />
+        </S.TextButton>
+      </S.Main>
+      {removeModalOpen && createPortal(<RemoveModal onClose={onRemoveModalClose} />, document.body)}
+    </>
   )
 }
-
-const Button = styled.button`
-  background-color: ${({ theme }) => theme.colors.purple_dark};
-  color: ${({ theme }) => theme.colors.white};
-  padding: 10px 24px;
-  border-radius: 8px;
-`
-
-const TextButton = styled.div`
-  padding: 8px;
-
-  &:hover {
-    cursor: pointer;
-    background-color: rgba(26, 115, 232, 0.04);
-    border-radius: 4px;
-  }
-`
 
 export default ViewFormFooter

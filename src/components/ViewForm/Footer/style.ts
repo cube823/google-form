@@ -9,4 +9,21 @@ const Main = styled.div`
   justify-content: space-between;
 `
 
-export { Main }
+const Button = styled.button`
+  background-color: ${({ theme }) => theme.colors.purple_dark};
+  color: ${({ theme }) => theme.colors.white};
+  padding: 10px 24px;
+  border-radius: 8px;
+`
+
+const TextButton = styled.div`
+  padding: 8px;
+
+  &:hover {
+    cursor: pointer;
+    background-color: rgba(26, 115, 232, 0.04);
+    border-radius: 4px;
+  }
+`
+
+export { Main, Button, TextButton }

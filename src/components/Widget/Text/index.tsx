@@ -41,10 +41,6 @@ const TextBaseContainer = styled.div<TextCssProps>`
   font-family: inherit;
   width: fit-content;
 
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-
   font-size: ${(props) => props.fontSize}px;
   font-weight: ${(props) => props.fontWeight};
   line-height: ${(props) => props.lineHeight}px;

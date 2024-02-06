@@ -29,9 +29,6 @@ const Question = styled.div<{ isCurrent?: boolean }>`
   padding: 0 24px 0 24px;
   border: 1px solid ${({ theme }) => theme.colors.gray_lighter};
   box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.1), inset 0 -1px 0 rgba(0, 0, 0, 0.07);
-
-  @media screen and (max-width: 950px) {
-  }
 `
 
 export const Layout = { Global, QuestionList, Question }

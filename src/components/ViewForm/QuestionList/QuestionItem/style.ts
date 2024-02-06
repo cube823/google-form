@@ -1,11 +1,5 @@
 import { styled } from 'styled-components'
 
-const DragHandler = styled.div`
-  display: flex;
-  width: 100%;
-  justify-content: center;
-`
-
 const CurrentHighlight = styled.div`
   top: 0;
   left: 0;
@@ -19,4 +13,4 @@ const CurrentHighlight = styled.div`
   background-color: ${({ theme }) => theme.colors.blue_lighter};
 `
 
-export { DragHandler, CurrentHighlight }
+export { CurrentHighlight }

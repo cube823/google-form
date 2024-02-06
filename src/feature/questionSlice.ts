@@ -150,6 +150,16 @@ const questionSlice = createSlice({
       newOptions.splice(action.payload.destinationIndex, 0, ...movingOption)
       state[action.payload.index].options = newOptions
     },
+
+    removeAllForm: (state) => {
+      for (let i = 0; i < state.length; i++) {
+        state[i].answerText = ''
+        state[i].options.forEach((option, j) => {
+          state[i].options[j].answerChecked = false
+          state[i].options[j].answerText = ''
+        })
+      }
+    },
   },
 })
 
@@ -169,6 +179,7 @@ export const {
   updateQuestionEtcOptionText,
   updateQuestionOptionAnswerChecked,
   updateQuestionOptionAnswerText,
+  removeAllForm,
 } = questionSlice.actions
 
 export default questionSlice.reducer

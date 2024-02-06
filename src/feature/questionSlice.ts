@@ -134,10 +134,8 @@ const questionSlice = createSlice({
       state,
       action: PayloadAction<{ sourceIndex: number; destinationIndex: number }>
     ) => {
-      const newQuestionList = state.slice()
-      const movingCard = newQuestionList.splice(action.payload.sourceIndex, 1)
-
-      newQuestionList.splice(Number(action.payload.destinationIndex), 0, ...movingCard)
+      const movingCard = state.splice(action.payload.sourceIndex, 1)
+      state.splice(Number(action.payload.destinationIndex), 0, ...movingCard)
     },
 
     updateQuestionOptionOrder: (
@@ -154,7 +152,7 @@ const questionSlice = createSlice({
     removeAllForm: (state) => {
       for (let i = 0; i < state.length; i++) {
         state[i].answerText = ''
-        state[i].options.forEach((option, j) => {
+        state[i].options.forEach((_, j) => {
           state[i].options[j].answerChecked = false
           state[i].options[j].answerText = ''
         })

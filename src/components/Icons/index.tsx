@@ -3,6 +3,7 @@ import { styled } from 'styled-components'
 import AddCircle from './AddCircle'
 import ArrowDropDown from './ArrowDropDown'
 import Checkbox from './Checkbox'
+import CheckboxOutlineBlank from './CheckboxOutlineBlank'
 import Close from './Close'
 import ContentCopy from './ContentCopy'
 import Delete from './Delete'
@@ -19,6 +20,7 @@ export type IconSymbol =
   | 'add-circle'
   | 'arrow-drop-down'
   | 'checkbox'
+  | 'checkbox-outline-blank'
   | 'close'
   | 'content-copy'
   | 'delete'
@@ -55,6 +57,8 @@ const Icon = ({
         return <ContentCopy />
       case 'checkbox':
         return <Checkbox />
+      case 'checkbox-outline-blank':
+        return <CheckboxOutlineBlank />
       case 'delete':
         return <Delete />
       case 'drag-indicator':

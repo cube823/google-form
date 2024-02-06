@@ -6,10 +6,11 @@ const theme = {
     purple_light: '#f0ebf8',
     purple_dark: '#673ab7',
 
-    grey_lighter: 'rgb(218,220,224)',
-    grey_light: 'rgb(112, 117, 121)',
-    grey_dark: '#707579',
-    grey_darker: 'rgb(95, 99, 104)',
+    gray: '#5f6368',
+    gray_lighter: 'rgb(218,220,224)',
+    gray_light: 'rgb(112, 117, 121)',
+    gray_dark: '#707579',
+    gray_darker: 'rgb(95, 99, 104)',
 
     blue_lighter: '#1a73e8',
     blue_light: '#4285f4',

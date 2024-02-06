@@ -34,15 +34,15 @@ const QuestionSelect = ({ index }: { index: number }) => {
     >
       <S.Trigger aria-label='질문 유형'>
         <Flex style={{ alignItems: 'center', gap: '8px' }}>
-          <Icon iconName={iconMap[currentQuestion.questionType]} color='#5f6368' />
+          <Icon iconName={iconMap[currentQuestion.questionType]} color='gray' />
           <S.Value defaultValue={currentQuestion.questionType} />
         </Flex>
-        <Icon iconName='arrow-drop-down' color='#5f6368' />
+        <Icon iconName='arrow-drop-down' color='gray' />
       </S.Trigger>
       <Select.Portal>
         <S.Content className='SelectContent'>
           <Select.ScrollUpButton>
-            <Icon iconName='visibility' color='#5f6368' />
+            <Icon iconName='visibility' color='gray' />
           </Select.ScrollUpButton>
           <Select.Viewport className='SelectViewport'>
             <Select.Group>

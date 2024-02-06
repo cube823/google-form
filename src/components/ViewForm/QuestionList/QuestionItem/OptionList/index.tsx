@@ -45,7 +45,7 @@ const QuestionOptionList = ({ index }: { index: number }) => {
     return (
       <Input
         as='textarea'
-        color='grey_light'
+        color='gray_light'
         style={{ ...inputStyle, width: '100%' }}
         value={question.answerText}
         setValue={onUpdateQuestionAnswer}

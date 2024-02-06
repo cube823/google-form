@@ -1,9 +1,9 @@
 import { styled } from 'styled-components'
 import { addQuestion, initialQuestionState } from '../../feature/questionSlice'
 import { useAppDispatch, useAppSelector } from '../../store'
-import Icon from '../Icons'
 import { v4 as uuidv4 } from 'uuid'
 import { updateCurrentSlice } from '../../feature/currentSlice'
+import IconButton from '../Widget/IconButton'
 
 const FloatingBox = () => {
   const dispatch = useAppDispatch()
@@ -15,11 +15,9 @@ const FloatingBox = () => {
   }
 
   return (
-    <>
-      <Container>
-        <Icon iconName='add-circle' onClick={onAddQuestion} />
-      </Container>
-    </>
+    <Container>
+      <IconButton iconName='add-circle' onClick={onAddQuestion} />
+    </Container>
   )
 }
 

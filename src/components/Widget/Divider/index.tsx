@@ -14,7 +14,7 @@ const Container = styled.div<DividerProps>`
   width: ${({ direction, length }) => (direction === 'vertical' ? '1px' : length ?? '100%')};
   height: ${({ direction, length }) =>
     direction === 'vertical' ? `${length}px` ?? '100%' : '1px'};
-  background-color: ${({ theme }) => theme.colors.grey_lighter};
+  background-color: ${({ theme }) => theme.colors.gray_lighter};
 `
 
 export default Divider

@@ -52,7 +52,7 @@ const OptionItem = ({ index, optionIndex, isCurrent, question, option }: OptionI
             <Text text={`${optionIndex + 1}`} />
           ) : (
             <Icon
-              color='#bdbdbd'
+              color='gray_light'
               iconName={
                 question.questionType === 'checkbox'
                   ? 'checkbox-outline-blank'
@@ -63,7 +63,6 @@ const OptionItem = ({ index, optionIndex, isCurrent, question, option }: OptionI
           <Input
             value={option.text}
             onBlur={() => {
-              console.log('blur', option.text)
               if (option.text === '') {
                 dispatch(
                   updateQuestionOption({

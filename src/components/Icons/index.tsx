@@ -1,5 +1,6 @@
 import { CSSProperties } from 'react'
 import { styled } from 'styled-components'
+import { Color } from '../../style/theme'
 import AddCircle from './AddCircle'
 import ArrowDropDown from './ArrowDropDown'
 import Checkbox from './Checkbox'
@@ -36,11 +37,11 @@ export type IconSymbol =
 const Icon = ({
   iconName,
   onClick,
-  color = '#5f6368',
+  color = 'gray',
   style,
   ...props
 }: {
-  color?: string
+  color?: Color
   iconName: IconSymbol
   onClick?: () => void
   style?: CSSProperties
@@ -83,16 +84,22 @@ const Icon = ({
   }
 
   return (
-    <IContainer style={{ ...style, color }} {...props} onClick={onClick} isClickable={!!onClick}>
+    <IContainer
+      color={color}
+      style={{ ...style, cursor: Boolean(onClick) ? 'pointer' : 'default' }}
+      {...props}
+      onClick={onClick}
+    >
       {icon()}
     </IContainer>
   )
 }
 
-const IContainer = styled.div<{ isClickable?: boolean }>`
+const IContainer = styled.div<{ color?: Color }>`
   height: 24px;
-  cursor: ${(props) => (props.isClickable ? 'pointer' : 'default')};
   fill: currentColor;
+
+  color: ${({ theme, color }) => theme.colors[color ?? 'black']};
 `
 
 export default Icon

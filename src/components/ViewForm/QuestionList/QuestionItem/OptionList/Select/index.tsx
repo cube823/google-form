@@ -42,12 +42,12 @@ const DropdownSelect = ({ index }: { index: number }) => {
         <Flex style={{ alignItems: 'center', gap: '8px' }}>
           <S.Value defaultValue={currentOption?.text ?? UNSELECTED} />
         </Flex>
-        <Icon iconName='arrow-drop-down' color='#5f6368' />
+        <Icon iconName='arrow-drop-down' color='gray' />
       </S.Trigger>
       <Select.Portal>
         <S.Content className='SelectContent'>
           <Select.ScrollUpButton>
-            <Icon iconName='visibility' color='#5f6368' />
+            <Icon iconName='visibility' color='gray' />
           </Select.ScrollUpButton>
           <Select.Viewport className='SelectViewport'>
             <Select.Group>

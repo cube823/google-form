@@ -38,10 +38,10 @@ const QuestionOptionList = ({ index }: { index: number }) => {
   }
 
   if (question.questionType === 'short')
-    return <Text style={textStyle} color='grey_light' text='단답형 텍스트' />
+    return <Text style={textStyle} color='gray_light' text='단답형 텍스트' />
 
   if (question.questionType === 'long')
-    return <Text style={{ ...textStyle, width: '75%' }} color='grey_light' text='장문형 텍스트' />
+    return <Text style={{ ...textStyle, width: '75%' }} color='gray_light' text='장문형 텍스트' />
 
   return (
     <DragDropContext onDragEnd={onDragEnd}>

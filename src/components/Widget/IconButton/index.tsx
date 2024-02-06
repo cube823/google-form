@@ -9,7 +9,7 @@ interface IconButtonProps {
 }
 
 const IconButton = ({ iconName, onClick, style }: IconButtonProps) => {
-  return <IContainer color='#5f6368' style={style} iconName={iconName} onClick={onClick} />
+  return <IContainer color='gray' style={style} iconName={iconName} onClick={onClick} />
 }
 
 const IContainer = styled(Icon)`

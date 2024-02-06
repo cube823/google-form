@@ -7,7 +7,7 @@ const Footer = styled.div`
   justify-self: flex-end;
   justify-items: flex-end;
   align-items: center;
-  border-top: 1px solid ${({ theme }) => theme.colors.grey_lighter};
+  border-top: 1px solid ${({ theme }) => theme.colors.gray_lighter};
   height: 64px;
 `
 export { Footer }

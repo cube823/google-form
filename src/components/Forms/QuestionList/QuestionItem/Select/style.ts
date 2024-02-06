@@ -33,7 +33,7 @@ const Item = styled(Select.Item)`
   gap: 8px;
 
   &:hover {
-    background-color: ${({ theme }) => theme.colors.grey_lighter};
+    background-color: ${({ theme }) => theme.colors.gray_lighter};
   }
 `
 

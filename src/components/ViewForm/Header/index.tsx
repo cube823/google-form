@@ -26,7 +26,7 @@ const ViewFormHeader = () => {
 
       <Grid>
         <Divider direction='horizontal' />
-        <Text fontWeight={700} color='grey_darker' text={EMAIL} style={{ padding: 24 }} />
+        <Text fontWeight={700} color='gray_darker' text={EMAIL} style={{ padding: 24 }} />
       </Grid>
 
       {hasRequired && (

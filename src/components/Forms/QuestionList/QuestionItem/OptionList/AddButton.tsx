@@ -25,7 +25,7 @@ const AddButton = ({ question, index }: { question: QuestionSlice; index: number
     <Flex style={{ height: '48px', alignItems: 'center' }}>
       <Flex style={{ gap: '6px' }}>
         <Flex onClick={addOption} style={{ cursor: 'pointer' }}>
-          <Text text='옵션 추가' color='grey_dark' />
+          <Text text='옵션 추가' color='gray_dark' />
         </Flex>
         {!isDropdown && <Text text='또는' />}
       </Flex>

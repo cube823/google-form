@@ -14,7 +14,7 @@ const SelectItem = ({
 }) => {
   return (
     <S.Item {...props}>
-      <Icon iconName={iconName} color='#5f6368' />
+      <Icon iconName={iconName} color='gray' />
       <Select.ItemText>{children}</Select.ItemText>
     </S.Item>
   )

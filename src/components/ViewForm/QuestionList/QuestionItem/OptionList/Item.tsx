@@ -8,6 +8,8 @@ import Flex from '../../../../Widget/Flex'
 import Text from '../../../../Widget/Text'
 import IconButton from '../../../../Widget/IconButton'
 import { memo, useCallback, useMemo } from 'react'
+import { IconSymbol } from '../../../../Icons'
+import { Color } from '../../../../../style/theme'
 
 interface OptionItemProps {
   index: number
@@ -27,12 +29,16 @@ const OptionItem = ({ index, optionIndex, question, option }: OptionItemProps) =
     [index, optionIndex, option.answerChecked]
   )
 
-  const iconName = useMemo(() => {
+  const { iconName, color }: { iconName: IconSymbol; color: Color } = useMemo(() => {
     if (question.questionType === 'checkbox') {
-      return option.answerChecked ? 'checkbox' : 'checkbox-outline-blank'
+      return option.answerChecked
+        ? { iconName: 'checkbox', color: 'purple_dark' }
+        : { iconName: 'checkbox-outline-blank', color: 'gray' }
     }
 
-    return option.answerChecked ? 'radio-button-checked' : 'radio-button-unchecked'
+    return option.answerChecked
+      ? { color: 'purple_dark', iconName: 'radio-button-checked' }
+      : { color: 'gray', iconName: 'radio-button-unchecked' }
   }, [question.questionType, option.answerChecked])
 
   return (
@@ -46,7 +52,12 @@ const OptionItem = ({ index, optionIndex, question, option }: OptionItemProps) =
       {question.questionType === 'dropdown' ? (
         <Text text={`${optionIndex + 1}`} />
       ) : (
-        <IconButton onClick={checkOption} iconName={iconName} style={{ width: 24, height: 24 }} />
+        <IconButton
+          onClick={checkOption}
+          color={color}
+          iconName={iconName}
+          style={{ width: 24, height: 24 }}
+        />
       )}
 
       <Text text={option.text} />

@@ -2,16 +2,24 @@ import { CSSProperties } from 'react'
 import { styled } from 'styled-components'
 import { Color } from '../../../style/theme'
 import Icon, { IconSymbol } from '../../Icons'
+import Tooltip from '../Tooltip'
 
 interface IconButtonProps {
   iconName: IconSymbol
   onClick: () => void
   style?: CSSProperties
   color?: Color
+  tooltipText?: string
 }
 
-const IconButton = ({ color, iconName, onClick, style }: IconButtonProps) => {
-  return <IContainer color={color ?? 'gray'} style={style} iconName={iconName} onClick={onClick} />
+const IconButton = ({ color, iconName, tooltipText, onClick, style }: IconButtonProps) => {
+  return tooltipText ? (
+    <Tooltip content={tooltipText}>
+      <IContainer color={color ?? 'gray'} style={style} iconName={iconName} onClick={onClick} />
+    </Tooltip>
+  ) : (
+    <IContainer color={color ?? 'gray'} style={style} iconName={iconName} onClick={onClick} />
+  )
 }
 
 const IContainer = styled(Icon)<{ color: Color }>`

@@ -16,7 +16,7 @@ const FloatingBox = () => {
 
   return (
     <Container>
-      <IconButton iconName='add-circle' onClick={onAddQuestion} />
+      <IconButton iconName='add-circle' onClick={onAddQuestion} tooltipText='질문 추가' />
     </Container>
   )
 }

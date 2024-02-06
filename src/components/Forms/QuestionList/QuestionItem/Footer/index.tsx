@@ -34,8 +34,8 @@ const Footer = ({ question, index }: { index: number; question: QuestionSlice })
   return (
     <S.Footer>
       <Flex style={{ gap: 24, paddingRight: 12 }}>
-        <IconButton iconName='content-copy' onClick={onCopyQuestion} />
-        <IconButton iconName='delete' onClick={onRemoveQuestion} />
+        <IconButton tooltipText='복사' iconName='content-copy' onClick={onCopyQuestion} />
+        <IconButton tooltipText='삭제' iconName='delete' onClick={onRemoveQuestion} />
       </Flex>
 
       <Divider direction='vertical' length={32} style={{ margin: '0 16px 0 16px' }} />

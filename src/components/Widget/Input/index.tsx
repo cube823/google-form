@@ -37,7 +37,7 @@ const Input = ({
         }}
       />
 
-      {removeInput && <IconButton iconName='close' onClick={removeInput} />}
+      {removeInput && <IconButton tooltipText='삭제' iconName='close' onClick={removeInput} />}
     </Main>
   )
 }

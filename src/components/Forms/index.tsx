@@ -1,6 +1,5 @@
 import { Layout } from '../../layout'
 import QuestionList from './QuestionList'
-import Tooltip from '../Widget/Tooltip'
 import FormHeader from './Header'
 import Flex from '../Widget/Flex'
 import FloatingBox from '../FloatingBox'
@@ -12,9 +11,7 @@ function Forms() {
 
   return (
     <Layout.Global>
-      <Tooltip content='미리보기'>
-        <IconButton iconName='visibility' onClick={navigateToViewForm} />
-      </Tooltip>
+      <IconButton iconName='visibility' onClick={navigateToViewForm} tooltipText='미리보기' />
 
       <Flex
         style={{

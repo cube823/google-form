@@ -37,7 +37,7 @@ const EtcItem = ({ index, isCurrent, question }: EtcItemProps) => {
       />
       <Flex style={{ width: '100%', alignItems: 'center' }}>
         <Text text='기타...' color={'gray_light'} style={{ width: '100%' }} />
-        {isCurrent && <IconButton iconName='close' onClick={removeEtc} />}
+        {isCurrent && <IconButton tooltipText='삭제' iconName='close' onClick={removeEtc} />}
       </Flex>
     </Flex>
   )

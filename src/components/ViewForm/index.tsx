@@ -1,6 +1,7 @@
 import { Layout } from '../../layout'
 import ViewQuestionList from './QuestionList'
 import ViewFormHeader from './Header'
+import ViewFormFooter from './Footer'
 
 const ViewForm = () => {
   return (
@@ -8,6 +9,8 @@ const ViewForm = () => {
       <ViewFormHeader />
 
       <ViewQuestionList />
+
+      <ViewFormFooter />
     </Layout.Global>
   )
 }

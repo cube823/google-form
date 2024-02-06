@@ -1,11 +1,12 @@
 import { styled } from 'styled-components'
-import Flex from '../../Widget/Flex'
 
-const Main = styled(Flex)`
+const Main = styled.div`
+  display: flex;
+  width: 100%;
+  max-width: 768px;
+  position: relative;
   align-items: center;
   justify-content: space-between;
-
-  padding: 16px 0 16px 24px;
 `
 
 export { Main }

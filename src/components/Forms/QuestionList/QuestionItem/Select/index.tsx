@@ -1,11 +1,11 @@
 import * as S from './style'
 import * as Select from '@radix-ui/react-select'
-import Icon, { IconSymbol } from '../../Icons'
-import { useAppDispatch, useAppSelector } from '../../../store'
-import { updateQuestionItem } from '../../../feature/questionSlice'
-import { QuestionType } from '../../../feature/type'
+import Icon, { IconSymbol } from '../../../../Icons'
+import { useAppDispatch, useAppSelector } from '../../../../../store'
+import { updateQuestion } from '../../../../../feature/questionSlice'
+import { QuestionType } from '../../../../../feature/type'
 import SelectItem from './Item'
-import Flex from '../Flex'
+import Flex from '../../../../Widget/Flex'
 
 const iconMap: Record<QuestionType, IconSymbol> = {
   short: 'short-text',
@@ -25,7 +25,7 @@ const QuestionSelect = ({ index }: { index: number }) => {
       value={currentQuestion.questionType}
       onValueChange={(value) => {
         dispatch(
-          updateQuestionItem({
+          updateQuestion({
             index,
             question: { ...currentQuestion, questionType: value as QuestionType },
           })

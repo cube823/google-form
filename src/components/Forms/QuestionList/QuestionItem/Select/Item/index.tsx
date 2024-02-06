@@ -1,7 +1,7 @@
 import { ReactNode } from 'react'
 import * as S from '../style'
 import * as Select from '@radix-ui/react-select'
-import Icon, { IconSymbol } from '../../../Icons'
+import Icon, { IconSymbol } from '../../../../../Icons'
 
 const SelectItem = ({
   children,

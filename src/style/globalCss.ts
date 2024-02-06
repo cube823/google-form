@@ -13,7 +13,7 @@ const GlobalStyles = createGlobalStyle`
         margin: 0;
         padding: 0;
         border: 0;
-        font-size: 10px;
+        font-size: 14px;
         vertical-align: baseline;
     }
     body{
@@ -29,6 +29,7 @@ const GlobalStyles = createGlobalStyle`
     }
 
     input, textarea {
+        font-family: 'docs-Roboto', Helvetica, Arial, sans-serif;
         outline: none;
         border: none;
         br: 0;

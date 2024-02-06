@@ -1,7 +1,41 @@
 import { Layout } from '../../layout'
+import QuestionList from './QuestionList'
+import Tooltip from '../Widget/Tooltip'
+import FormHeader from './Header'
+import Flex from '../Widget/Flex'
+import FloatingBox from '../FloatingBox'
+import { DesktopFloatingBox } from './QuestionList/style'
+import IconButton from '../Widget/IconButton'
 
 function Forms() {
-  return <Layout.Global></Layout.Global>
+  const navigateToViewForm = () => window.open('/viewForm', '_blank')
+
+  return (
+    <Layout.Global>
+      <Tooltip content='미리보기'>
+        <IconButton iconName='visibility' onClick={navigateToViewForm} />
+      </Tooltip>
+
+      <Flex
+        style={{
+          flexDirection: 'column',
+          gap: '12px',
+          position: 'relative',
+          width: '100%',
+
+          alignItems: 'center',
+        }}
+      >
+        <FormHeader />
+
+        <QuestionList />
+
+        <DesktopFloatingBox>
+          <FloatingBox />
+        </DesktopFloatingBox>
+      </Flex>
+    </Layout.Global>
+  )
 }
 
 export default Forms

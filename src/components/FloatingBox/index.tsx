@@ -28,6 +28,7 @@ const Container = styled.div`
   align-items: center;
 
   background-color: ${({ theme }) => theme.colors.white};
+  border: 1px solid rgb(218, 220, 224);
   border-radius: 8px;
 
   @media screen and (min-width: 951px) {
@@ -40,8 +41,6 @@ const Container = styled.div`
 
     -webkit-transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
     transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-
-    border: 1px solid rgb(218, 220, 224);
   }
 
   @media screen and (max-width: 950px) {
@@ -51,6 +50,11 @@ const Container = styled.div`
     bottom: 0;
     height: 60px;
     width: calc(100% - 32px);
+    border-radius: 8px 8px 0 0;
+    border-width: 1px 1px 0 1px;
+
+    box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),
+      0 1px 3px 0 rgba(0, 0, 0, 0.12);
   }
 `
 

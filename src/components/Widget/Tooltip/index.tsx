@@ -2,13 +2,21 @@ import { ReactNode } from 'react'
 import * as RadixTooltip from '@radix-ui/react-tooltip'
 import { keyframes, styled } from 'styled-components'
 
-const Tooltip = ({ children, content }: { children: ReactNode; content?: string }) => {
+export type Side = 'bottom' | 'left' | 'right' | 'top'
+
+interface TooltipProps {
+  children: ReactNode
+  content?: string
+  side?: Side
+}
+
+const Tooltip = ({ children, content, side }: TooltipProps) => {
   return (
     <RadixTooltip.Provider>
       <RadixTooltip.Root delayDuration={0}>
         <Trigger>{children}</Trigger>
         <RadixTooltip.Portal>
-          <Content sideOffset={5} align='center'>
+          <Content sideOffset={10} align='center' side={side}>
             {content}
           </Content>
         </RadixTooltip.Portal>

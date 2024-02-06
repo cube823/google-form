@@ -2,7 +2,7 @@ import { CSSProperties } from 'react'
 import { styled } from 'styled-components'
 import { Color } from '../../../style/theme'
 import Icon, { IconSymbol } from '../../Icons'
-import Tooltip from '../Tooltip'
+import Tooltip, { Side } from '../Tooltip'
 
 interface IconButtonProps {
   iconName: IconSymbol
@@ -10,11 +10,12 @@ interface IconButtonProps {
   style?: CSSProperties
   color?: Color
   tooltipText?: string
+  side?: Side
 }
 
-const IconButton = ({ color, iconName, tooltipText, onClick, style }: IconButtonProps) => {
+const IconButton = ({ color, iconName, tooltipText, side, onClick, style }: IconButtonProps) => {
   return tooltipText ? (
-    <Tooltip content={tooltipText}>
+    <Tooltip content={tooltipText} side={side}>
       <IContainer color={color ?? 'gray'} style={style} iconName={iconName} onClick={onClick} />
     </Tooltip>
   ) : (

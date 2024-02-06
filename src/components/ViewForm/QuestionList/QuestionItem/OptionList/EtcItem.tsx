@@ -5,6 +5,8 @@ import {
   updateQuestionEtcOptionChecked,
 } from '../../../../../feature/questionSlice'
 import { useAppDispatch } from '../../../../../store'
+import { Color } from '../../../../../style/theme'
+import { IconSymbol } from '../../../../Icons'
 import Flex from '../../../../Widget/Flex'
 import IconButton from '../../../../Widget/IconButton'
 import Input from '../../../../Widget/Input'
@@ -17,18 +19,22 @@ interface EtcItemProps {
 
 const EtcItem = ({ index, question }: EtcItemProps) => {
   const dispatch = useAppDispatch()
-
-  const iconName = useMemo(() => {
+  const { iconName, color }: { iconName: IconSymbol; color: Color } = useMemo(() => {
     if (question.questionType === 'checkbox') {
-      if (question.etcOption.checked) return 'checkbox'
-      return 'checkbox-outline-blank'
+      if (question.etcOption.checked)
+        return {
+          iconName: 'checkbox',
+          color: 'purple_dark',
+        }
+      return { iconName: 'checkbox-outline-blank', color: 'gray' }
     }
 
     if (question.questionType === 'multiple') {
-      if (question.etcOption.checked) return 'radio-button-checked'
+      if (question.etcOption.checked)
+        return { iconName: 'radio-button-checked', color: 'purple_dark' }
     }
 
-    return 'radio-button-unchecked'
+    return { iconName: 'radio-button-unchecked', color: 'gray' }
   }, [question.questionType, question.etcOption.checked])
 
   const updateEtcText = useCallback(
@@ -56,6 +62,7 @@ const EtcItem = ({ index, question }: EtcItemProps) => {
       <IconButton
         iconName={iconName}
         style={{ width: 24, height: 24 }}
+        color={color}
         onClick={() =>
           dispatch(updateQuestionEtcOptionChecked({ index, checked: !question.etcOption.checked }))
         }
@@ -63,9 +70,9 @@ const EtcItem = ({ index, question }: EtcItemProps) => {
       <Flex style={{ width: '100%', gap: 32, alignItems: 'center' }}>
         <Text text='기타:' style={{ flexShrink: 0 }} />
         <Input
+          hasBorderBottom
           value={question.etcOption.text}
           setValue={updateEtcText}
-          hasBorderBottom
           style={{ fontSize: 16 }}
         />
       </Flex>

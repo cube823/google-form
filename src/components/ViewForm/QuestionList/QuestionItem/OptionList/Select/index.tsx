@@ -1,11 +1,10 @@
-import * as S from './style'
-import * as Select from '@radix-ui/react-select'
 import Icon from '../../../../../Icons'
 import { useAppDispatch, useAppSelector } from '../../../../../../store'
 import { updateQuestionOptionAnswerChecked } from '../../../../../../feature/questionSlice'
 import SelectItem from './Item'
 import Flex from '../../../../../Widget/Flex'
 import Divider from '../../../../../Widget/Divider'
+import { Select } from '../../../../../Widget/Select/style'
 
 const UNSELECTED = '선택'
 
@@ -38,16 +37,16 @@ const DropdownSelect = ({ index }: { index: number }) => {
         )
       }}
     >
-      <S.Trigger aria-label='presentation'>
+      <Select.Trigger aria-label='presentation'>
         <Flex style={{ alignItems: 'center', gap: '8px' }}>
-          <S.Value defaultValue={currentOption?.text ?? UNSELECTED} />
+          <Select.Value defaultValue={currentOption?.text ?? UNSELECTED} />
         </Flex>
         <Icon iconName='arrow-drop-down' color='gray' />
-      </S.Trigger>
+      </Select.Trigger>
       <Select.Portal>
-        <S.Content className='SelectContent'>
+        <Select.Content className='SelectContent'>
           <Select.ScrollUpButton>
-            <Icon iconName='visibility' color='gray' />
+            <Icon iconName='more-vert' color='gray' />
           </Select.ScrollUpButton>
           <Select.Viewport className='SelectViewport'>
             <Select.Group>
@@ -64,7 +63,7 @@ const DropdownSelect = ({ index }: { index: number }) => {
               ))}
             </Select.Group>
           </Select.Viewport>
-        </S.Content>
+        </Select.Content>
       </Select.Portal>
     </Select.Root>
   )

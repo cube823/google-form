@@ -1,11 +1,10 @@
-import * as S from './style'
-import * as Select from '@radix-ui/react-select'
 import Icon, { IconSymbol } from '../../../../Icons'
 import { useAppDispatch, useAppSelector } from '../../../../../store'
 import { updateQuestion } from '../../../../../feature/questionSlice'
 import { QuestionType } from '../../../../../feature/type'
 import SelectItem from './Item'
 import Flex from '../../../../Widget/Flex'
+import { Select } from '../../../../Widget/Select/style'
 
 const iconMap: Record<QuestionType, IconSymbol> = {
   short: 'short-text',
@@ -32,24 +31,32 @@ const QuestionSelect = ({ index }: { index: number }) => {
         )
       }}
     >
-      <S.Trigger aria-label='질문 유형'>
+      <Select.Trigger aria-label='질문 유형'>
         <Flex style={{ alignItems: 'center', gap: '8px' }}>
           <Icon iconName={iconMap[currentQuestion.questionType]} color='gray' />
-          <S.Value defaultValue={currentQuestion.questionType} />
+          <Select.Value defaultValue={currentQuestion.questionType} />
         </Flex>
         <Icon iconName='arrow-drop-down' color='gray' />
-      </S.Trigger>
+      </Select.Trigger>
       <Select.Portal>
-        <S.Content className='SelectContent'>
+        <Select.Content className='SelectContent'>
           <Select.ScrollUpButton>
-            <Icon iconName='visibility' color='gray' />
+            <Icon iconName='more-vert' color='gray' />
           </Select.ScrollUpButton>
           <Select.Viewport className='SelectViewport'>
             <Select.Group>
-              <SelectItem value='short' iconName='short-text'>
+              <SelectItem
+                isCurrent={currentQuestion.questionType === 'short'}
+                value='short'
+                iconName='short-text'
+              >
                 단답형
               </SelectItem>
-              <SelectItem iconName='subject' value='long'>
+              <SelectItem
+                isCurrent={currentQuestion.questionType === 'long'}
+                iconName='subject'
+                value='long'
+              >
                 장문형
               </SelectItem>
             </Select.Group>
@@ -57,18 +64,30 @@ const QuestionSelect = ({ index }: { index: number }) => {
             <Select.Separator className='SelectSeparator' />
 
             <Select.Group>
-              <SelectItem iconName='radio-button-checked' value='multiple'>
+              <SelectItem
+                isCurrent={currentQuestion.questionType === 'multiple'}
+                iconName='radio-button-checked'
+                value='multiple'
+              >
                 객관식 질문
               </SelectItem>
-              <SelectItem iconName='checkbox' value='checkbox'>
+              <SelectItem
+                isCurrent={currentQuestion.questionType === 'checkbox'}
+                iconName='checkbox'
+                value='checkbox'
+              >
                 체크박스
               </SelectItem>
-              <SelectItem iconName='expand-circle-down' value='dropdown'>
+              <SelectItem
+                isCurrent={currentQuestion.questionType === 'dropdown'}
+                iconName='expand-circle-down'
+                value='dropdown'
+              >
                 드롭다운
               </SelectItem>
             </Select.Group>
           </Select.Viewport>
-        </S.Content>
+        </Select.Content>
       </Select.Portal>
     </Select.Root>
   )

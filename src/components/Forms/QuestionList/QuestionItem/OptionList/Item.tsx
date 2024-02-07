@@ -59,7 +59,7 @@ const OptionItem = ({ index, optionIndex, isCurrent, question, option }: OptionI
             boxShadow: snapshot.isDragging ? '0px 4px 4px rgba(0, 0, 0, 0.25)' : 'none',
           }}
         >
-          {isHovered && (
+          {isCurrent && isHovered && (
             <Icon
               {...provided.dragHandleProps}
               iconName='drag-indicator'

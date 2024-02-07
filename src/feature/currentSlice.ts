@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
-import { copyQuestion, removeQuestion } from './questionSlice'
+import { copyQuestion, removeQuestion, updateQuestionOrder } from './questionSlice'
 
 interface CurrentSlice {
   currentIndex: number
@@ -19,6 +19,10 @@ const currentSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
+    builder.addCase(updateQuestionOrder, (state, action) => {
+      state.currentIndex = action.payload.destinationIndex
+    })
+
     builder.addCase(copyQuestion, (state) => {
       state.currentIndex += 1
     })

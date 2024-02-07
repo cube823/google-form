@@ -48,6 +48,7 @@ const OptionItem = ({ index, optionIndex, isCurrent, question, option }: OptionI
         <Flex
           ref={provided.innerRef}
           {...provided.draggableProps}
+          {...provided.dragHandleProps}
           onMouseOver={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
           style={{

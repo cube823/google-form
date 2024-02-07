@@ -1,4 +1,4 @@
-import { CSSProperties } from 'react'
+import { CSSProperties, MouseEvent } from 'react'
 import { styled } from 'styled-components'
 import { Color } from '../../style/theme'
 import AddCircle from './AddCircle'
@@ -45,7 +45,7 @@ const Icon = ({
 }: {
   color?: Color
   iconName: IconSymbol
-  onClick?: () => void
+  onClick?: (e?: MouseEvent<HTMLDivElement>) => void
   style?: CSSProperties
 }) => {
   const icon = () => {

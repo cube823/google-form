@@ -1,4 +1,4 @@
-import { CSSProperties } from 'react'
+import { CSSProperties, MouseEvent } from 'react'
 import { styled } from 'styled-components'
 import { Color } from '../../../style/theme'
 import Icon, { IconSymbol } from '../../Icons'
@@ -6,7 +6,7 @@ import Tooltip, { Side } from '../Tooltip'
 
 interface IconButtonProps {
   iconName: IconSymbol
-  onClick: () => void
+  onClick?: (e?: MouseEvent<HTMLDivElement>) => void
   style?: CSSProperties
   color?: Color
   tooltipText?: string

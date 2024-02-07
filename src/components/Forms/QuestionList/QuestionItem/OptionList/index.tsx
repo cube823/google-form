@@ -58,10 +58,8 @@ const QuestionOptionList = ({ index }: { index: number }) => {
                 isCurrent={isCurrent}
               />
             ))}
-
-            <EtcItem index={index} isCurrent={isCurrent} question={question} />
-
             {provided.placeholder}
+            <EtcItem index={index} isCurrent={isCurrent} question={question} />
           </Grid>
         )}
       </Droppable>

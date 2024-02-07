@@ -1,3 +1,4 @@
+import { memo, MouseEvent } from 'react'
 import {
   copyQuestion,
   QuestionSlice,
@@ -11,20 +12,22 @@ import QuestionSwitch from '../../../../Widget/Switch'
 import Text from '../../../../Widget/Text'
 import * as S from './style'
 import IconButton from '../../../../Widget/IconButton'
-import { updateCurrentSlice } from '../../../../../feature/currentSlice'
-import { memo } from 'react'
 
 const Footer = ({ question, index }: { index: number; question: QuestionSlice }) => {
   const dispatch = useAppDispatch()
 
-  const onCopyQuestion = () => {
+  const onCopyQuestion = (e?: MouseEvent<HTMLDivElement>) => {
+    e?.preventDefault()
+    e?.stopPropagation()
+
     dispatch(copyQuestion({ index }))
-    dispatch(updateCurrentSlice(index + 1))
   }
 
-  const onRemoveQuestion = () => {
+  const onRemoveQuestion = (e?: MouseEvent<HTMLDivElement>) => {
+    e?.preventDefault()
+    e?.stopPropagation()
+
     dispatch(removeQuestion({ index }))
-    dispatch(updateCurrentSlice(index === 0 ? index : index - 1))
   }
 
   const onCheckedChange = (checked: boolean) => {

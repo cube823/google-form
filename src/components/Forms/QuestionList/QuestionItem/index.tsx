@@ -47,6 +47,10 @@ const QuestionItem = ({ id, index }: { id: string; index: number }) => {
             onClick={setCurrent}
             ref={provided.innerRef}
             {...provided.draggableProps}
+            style={{
+              ...provided.draggableProps.style,
+              opacity: snapshot.isDragging ? 0.6 : 1,
+            }}
           >
             {currentIndex === index && <S.CurrentHighlight />}
 
@@ -63,6 +67,7 @@ const QuestionItem = ({ id, index }: { id: string; index: number }) => {
                 value={currentQuestion.title.text}
                 setValue={setValue}
                 hoverDisabled={!isCurrent}
+                hasBorderBottom={isCurrent}
                 style={{
                   fontSize: '16px',
                   height: isCurrent ? '56px' : undefined,

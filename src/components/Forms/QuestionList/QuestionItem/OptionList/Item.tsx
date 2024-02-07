@@ -40,14 +40,20 @@ const OptionItem = ({ index, optionIndex, isCurrent, question, option }: OptionI
         <Flex
           ref={provided.innerRef}
           {...provided.draggableProps}
-          {...provided.dragHandleProps}
           style={{
             ...provided.draggableProps.style,
             alignItems: 'center',
             height: '48px',
             gap: '6px',
+            opacity: snapshot.isDragging ? 0.6 : 1,
+            boxShadow: snapshot.isDragging ? '0px 4px 4px rgba(0, 0, 0, 0.25)' : 'none',
           }}
         >
+          <Icon
+            {...provided.dragHandleProps}
+            iconName='drag-indicator'
+            style={{ position: 'absolute', left: -24 }}
+          />
           {question.questionType === 'dropdown' ? (
             <Text text={`${optionIndex + 1}`} />
           ) : (

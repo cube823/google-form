@@ -1,3 +1,4 @@
+import { memo, useMemo } from 'react'
 import { DragDropContext, Droppable, DropResult } from 'react-beautiful-dnd'
 import { updateQuestionOptionOrder } from '../../../../../feature/questionSlice'
 import { useAppDispatch, useAppSelector } from '../../../../../store'
@@ -13,7 +14,7 @@ const QuestionOptionList = ({ index }: { index: number }) => {
   const { currentIndex } = useAppSelector((state) => state.currentReducer)
   const question = questions[index]
 
-  const isCurrent = currentIndex === index
+  const isCurrent = useMemo(() => currentIndex === index, [currentIndex, index])
 
   const onDragEnd = ({ destination, source }: DropResult) => {
     if (!destination) return
@@ -68,4 +69,4 @@ const QuestionOptionList = ({ index }: { index: number }) => {
   )
 }
 
-export default QuestionOptionList
+export default memo(QuestionOptionList)

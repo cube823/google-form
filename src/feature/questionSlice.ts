@@ -46,7 +46,7 @@ export const initialQuestionState: QuestionSlice = {
 }
 
 const questionSlice = createSlice({
-  name: 'previewSlice',
+  name: 'questionSlice',
   initialState: [initialQuestionState],
   reducers: {
     addQuestion: (state, action: PayloadAction<QuestionSlice>) => {

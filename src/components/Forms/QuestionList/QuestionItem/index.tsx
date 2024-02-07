@@ -56,7 +56,7 @@ const QuestionItem = ({ id, index }: { id: string; index: number }) => {
 
             <S.DragHandler {...provided.dragHandleProps}>
               {isHover || isCurrent ? (
-                <Icon color='gray_lighter' iconName='drag-indicator' />
+                <Icon color='gray_lighter' iconName='drag-indicator-rotate' />
               ) : (
                 <Flex style={{ height: '24px', width: '100%' }} />
               )}

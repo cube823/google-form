@@ -9,6 +9,7 @@ import Close from './Close'
 import ContentCopy from './ContentCopy'
 import Delete from './Delete'
 import DragIndicator from './DragIndicator'
+import DragIndicatorRotate from './DragIndicatorRotate'
 import ExpandCircleDown from './ExpandCircleDown'
 import MoreVert from './MoreVert'
 import RadioButtonChecked from './RadioButtonChecked'
@@ -26,6 +27,7 @@ export type IconSymbol =
   | 'content-copy'
   | 'delete'
   | 'drag-indicator'
+  | 'drag-indicator-rotate'
   | 'expand-circle-down'
   | 'more-vert'
   | 'radio-button-checked'
@@ -64,6 +66,8 @@ const Icon = ({
         return <Delete />
       case 'drag-indicator':
         return <DragIndicator />
+      case 'drag-indicator-rotate':
+        return <DragIndicatorRotate />
       case 'expand-circle-down':
         return <ExpandCircleDown />
       case 'more-vert':

@@ -18,7 +18,6 @@ const ViewFormFooter = () => {
     requiredList.forEach((question) => {
       if (question.questionType === 'short' || question.questionType === 'long') {
         if (!question.answerText) {
-          console.log('answerText', question.answerText)
           isAllAnswered = false
         }
       }

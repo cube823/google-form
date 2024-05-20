@@ -20,10 +20,7 @@ const FormHeader = () => {
       <Input
         value={title.text}
         setValue={(val: string) => dispatch(updateHederTitle(val))}
-        style={{
-          padding: '13px 0 13px 0',
-          fontSize: 32,
-        }}
+        style={{ padding: '13px 0', fontSize: 32 }}
         hasBorderBottom={currentIndex === -1}
         hoverDisabled={currentIndex !== -1}
       />

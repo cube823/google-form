@@ -41,7 +41,8 @@ const Footer = ({ question, index }: { index: number; question: QuestionSlice })
         <IconButton tooltipText='삭제' iconName='delete' onClick={onRemoveQuestion} />
       </Flex>
 
-      <Divider direction='vertical' length={32} style={{ margin: '0 16px 0 16px' }} />
+      <Divider direction='vertical' length={32} style={{ margin: '0 16px' }} />
+
       <Flex style={{ alignItems: 'center', gap: 12, paddingRight: 12 }}>
         <Text text='필수' color='black' fontSize={14} fontWeight={400} />
         <QuestionSwitch checked={question.isRequired} onCheckedChange={onCheckedChange} />

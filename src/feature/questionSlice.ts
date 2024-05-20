@@ -7,7 +7,7 @@ export interface Option {
   id: string
   text: string
 
-  answerText?: string
+  answerText: string
   answerChecked: boolean
 }
 
@@ -34,7 +34,9 @@ export const initialQuestionState: QuestionSlice = {
     text: '질문',
   },
   questionType: 'multiple',
-  options: [{ id: 'First Question Option Id', text: '옵션 1', answerChecked: false }],
+  options: [
+    { id: 'First Question Option Id', text: '옵션 1', answerText: '', answerChecked: false },
+  ],
   isRequired: false,
   etcOption: {
     hasEtcOption: false,
@@ -97,6 +99,7 @@ const questionSlice = createSlice({
       state[action.payload.index].options.push({
         id: uuidv4(),
         text: `옵션 ${state[action.payload.index].options.length + 1}`,
+        answerText: '',
         answerChecked: false,
       })
     },

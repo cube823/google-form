@@ -14,7 +14,6 @@ function Forms() {
           gap: '12px',
           position: 'relative',
           width: '100%',
-
           alignItems: 'center',
         }}
       >
